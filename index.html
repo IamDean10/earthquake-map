@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Earthquake Map</title>
+        </script>
+        <link rel="stylesheet" href="/resources/css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- The callback parameter is required, so we use console.debug as a noop -->
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfsh5zySCzPCYVcKb9xTey44AQBGwtc4o&callback=console.debugg&callback=initMap"></script>
+    </head>
+    <body>
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="info-panel">
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Earthquake Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="info-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script src="/resources/js/api.js"></script>
+    <script src="/resources/js/info.js"></script>
+    <script src="/resources/js/utils.js"></script>
+    <script src="/resources/js/map.js"></script>
+</html>

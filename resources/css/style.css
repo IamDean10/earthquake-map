@@ -1,0 +1,74 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Map Container */
+.map-container {
+  height: 100vh;
+  display: flex;
+}
+.info-panel {
+  display: none;
+  max-width: 600px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  float: right;
+  word-break: break-word;
+}
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+
+/* Info Box Style */
+.infoContent {
+  text-align: center;
+}
+.infoFooter {
+  padding: 10px;
+  margin-top: 20px;
+  color: grey;
+  border-top: 1px solid #009879;
+}
+
+/* Table Style */
+.info-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.info-table th,
+.info-table td {
+  padding: 12px 15px;
+}
+
+.info-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.info-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.info-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
