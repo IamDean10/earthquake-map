@@ -1,5 +1,5 @@
 
-# Technical Test - Earthquake Map
+# Fun Test - Earthquake Map
 
 The "Earthquake Map" website is a dynamic and interactive platform built using HTML, CSS, JavaScript. It provides users with real-time information and visualizations of earthquake occurrences worldwide. Through the integration of various APIs and data sources, the website offers an intuitive map interface where users can explore earthquake data. With its responsive design and smooth user experience, the Earthquake Map website aims to educate and raise awareness about seismic activities while keeping users informed about recent earthquakes globally.
 
