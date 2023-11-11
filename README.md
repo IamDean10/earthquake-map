@@ -64,7 +64,7 @@ Go to the project directory
 Start the server
 
 ```bash
-  Note: Your directly run it by opening index.html file or use VS Code live server plugin.
+  Note: You can launch it directly by accessing the index.html file or by using the live server plugin for Visual Studio Code.
 ```
 
 
