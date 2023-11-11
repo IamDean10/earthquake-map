@@ -1,6 +1,14 @@
 async function populateSidePanel(detail) {
+  // Hide table and show loader
+  $('.info-loader ').show();
+  $('.info-table ').hide();
+
   // GET earthquake details
   let earthquakeDetails = await getEarthquakesDetail(detail);
+
+  // Hide loader and show table
+  $('.info-loader ').hide();
+  $('.info-table ').show();
 
   //  Destructure Object
   const {

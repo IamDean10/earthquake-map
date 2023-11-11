@@ -31,6 +31,7 @@ note: you can directly used the url given in the earthquakes feed v1 summary api
 - Google Map Integration
 - Earthquake Details
 - External Links
+- Optimized for low end devices
 
 
 

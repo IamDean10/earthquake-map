@@ -46,6 +46,7 @@ async function initMap() {
       "</div>" +
       "</div>";
 
+    // Add info windows
     const infoWindow = new google.maps.InfoWindow({
       content: contentString,
       enableEventPropagation: true,
@@ -66,6 +67,7 @@ async function initMap() {
       });
     });
 
+    // Add Markers
     const marker = new google.maps.Marker({
       position: coorLatLang,
       map,
@@ -78,6 +80,7 @@ async function initMap() {
 
       // populate side panel table
       populateSidePanel(detail);
+
       if (prevInfoWindow) {
         // Close previous info window when another one is opened
         prevInfoWindow.close();

@@ -46,12 +46,10 @@ body {
 @media only screen and (max-width: 768px) {
   .map-container {
     flex-direction: column;
-    /* height: 60vh; */
   }
   .info-panel {
     max-width: 100% !important;
     max-height: 40vh;
-    /* background-color: red !important; */
   }
 }
 
@@ -72,6 +70,7 @@ body {
   border-collapse: collapse;
   font-size: 0.9em;
   width: 100%;
+  display: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -105,7 +104,7 @@ body {
 }
 
 /* add margin for mobile view */
-#external-table{
+#external-table {
   margin-bottom: 19px;
 }
 
@@ -147,4 +146,16 @@ body {
 .splash-content .subtitle {
   font-size: 0.9rem !important;
   margin-bottom: 30px;
+}
+
+/* Loading content for slow devices */
+.info-loader {
+  background-color: #054e40;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

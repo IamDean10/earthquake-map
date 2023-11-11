@@ -21,6 +21,7 @@ function kebabToTitle(string) {
   );
 }
 
+// Redirect confimation alert
 function confirmRedirect(url) {
   const response = confirm("Do you really wish to visit an external website?");
   if (response) {
