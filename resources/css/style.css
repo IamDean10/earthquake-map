@@ -104,6 +104,11 @@ body {
   border-bottom: 2px solid #009879;
 }
 
+/* add margin for mobile view */
+#external-table{
+  margin-bottom: 19px;
+}
+
 /* External Link  */
 .external-link {
   color: blue;
