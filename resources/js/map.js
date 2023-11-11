@@ -10,14 +10,17 @@ async function initMap() {
 
   // Initialize GET earthquake feeds
   earthquakeFeed = await getEarthquakesFeed();
-
   const features = earthquakeFeed?.features ?? [];
+
   //   Initial map viewport
   const myLatLng = { lat: -25.363, lng: 131.044 };
   const map = new google.maps.Map($("#map")[0], {
     zoom: 2,
     center: myLatLng,
   });
+
+  // Limit zoom
+  map.setOptions({ minZoom: 2 });
 
   //   Loop to features to create a map marker
   await $.each(features, (index) => {
