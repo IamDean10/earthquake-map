@@ -33,12 +33,12 @@ async function initMap() {
 
     //  Create new html content for information window
     const contentString =
-      '<div class="infoContent">' +
-      `<h2 class="infoTitle">${title} </h2>` +
-      '<div class="infoTime">' +
+      '<div class="info-content">' +
+      `<h2>${title} </h2>` +
+      "<div>" +
       `${epochToDate(time)}` +
       "</div>" +
-      '<div class="infoFooter">' +
+      '<div class="info-footer">' +
       `Click to view full details` +
       "</div>" +
       "</div>";
