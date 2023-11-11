@@ -14,7 +14,6 @@ async function populateSidePanel(detail) {
   const {
     place,
     time,
-    url,
     mag,
     magType,
     status,
