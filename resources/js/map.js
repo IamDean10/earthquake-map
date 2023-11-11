@@ -13,10 +13,14 @@ async function initMap() {
   const features = earthquakeFeed?.features ?? [];
 
   //   Initial map viewport
-  const myLatLng = { lat: -25.363, lng: 131.044 };
+  const myLatLng = { lat: 11, lng: 120 };
+  // Restriction prevent panning to gray area
   const map = new google.maps.Map($("#map")[0], {
-    zoom: 2,
+    zoom: 3,
     center: myLatLng,
+    restriction: {
+      latLngBounds: {north: 85, south: -85, west: -180, east: 180},
+    },
   });
 
   // Limit zoom
