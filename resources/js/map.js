@@ -1,9 +1,13 @@
-// Variables
-let earthquakeFeed = [];
-let prevInfoWindow;
+$(document).ready(() => {
+  // Initialize Map on ready
+  initMap();
+});
 
-// Initialize Map
 async function initMap() {
+  // Variables
+  let earthquakeFeed = [];
+  let prevInfoWindow;
+
   // Initialize GET earthquake feeds
   earthquakeFeed = await getEarthquakesFeed();
 
@@ -16,7 +20,7 @@ async function initMap() {
   });
 
   //   Loop to features to create a map marker
-  $.each(features, (index) => {
+  await $.each(features, (index) => {
     const {
       properties: { time, title, detail },
       geometry: { coordinates },
@@ -84,4 +88,9 @@ async function initMap() {
       });
     });
   });
+
+  // Remove splash screen when map is done
+  setTimeout(() => {
+    $(".splash").fadeOut(700);
+  }, 500);
 }

@@ -21,21 +21,22 @@ async function populateSidePanel(detail) {
       "num-stations-used": numStationsUsed,
       "num-phases-used": numPhasesUsed,
       eventsource,
+      latitude,
+      longitude,
     },
   } = origin[0];
 
-  console.log(earthquakeDetails?.properties);
-  console.log(url);
-  populateTable();
+  populateInfoTable();
+  populateExternalTable();
 
-  function populateTable() {
+  function populateInfoTable() {
     let result;
     const tbody = $("#info-table-body");
 
     // Clear table
     tbody.empty();
 
-    const tableData = {
+    const earthquakeData = {
       place,
       time: epochToDate(time),
       magnitude: mag + " " + magType,
@@ -45,16 +46,48 @@ async function populateSidePanel(detail) {
       status: status?.toUpperCase(),
       catalog: eventsource?.toUpperCase() + " - " + code,
       contributor: source?.toUpperCase(),
+      latitude,
+      longitude,
     };
 
     //  Loop to create new table data
-    for (const key in tableData) {
+    for (const key in earthquakeData) {
       result +=
         `<tr><td width='150px'>${kebabToTitle(key)} </td>` +
-        `<td> ${tableData[key] ?? "-"} </td></tr>`;
+        `<td> ${earthquakeData[key] ?? "-"} </td></tr>`;
     }
 
-    // Insert html to table
+    // Insert html to info table
     tbody.append(result);
+  }
+
+  function populateExternalTable() {
+    let result;
+    const tbody = $("#external-table-body");
+
+    // Clear table
+    tbody.empty();
+
+    const externalLinks = {
+      "USGS-data": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}`,
+      origin: `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/origin/detail`,
+      "phase-data": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/origin/phase`,
+      "do-you-feel-it": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/dyfi/intensity`,
+      "nearby-cities": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/region-info`,
+    };
+
+    for (const key in externalLinks) {
+      result +=
+        `<tr><td width='150px'>${kebabToTitle(key)} </td>` +
+        `<td> <a  class="external-link" onclick="confirmRedirect('${externalLinks[key]}')" target="_blank"><i class="fa-solid fa-link"></i> Click Here</a> </td></tr>`;
+    }
+
+    // Insert html to external table
+    tbody.append(result);
+
+    // Close side panel on click
+    $("#info-table-close").on("click", () => {
+      $(".info-panel").fadeOut();
+    });
   }
 }

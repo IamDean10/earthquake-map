@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Earthquake Map</title>
-        </script>
-        <link rel="stylesheet" href="/resources/css/style.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <!-- The callback parameter is required, so we use console.debug as a noop -->
-        <script async
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfsh5zySCzPCYVcKb9xTey44AQBGwtc4o&callback=console.debugg&callback=initMap"></script>
-    </head>
-    <body>
-        <div class="map-container">
-            <div id="map"></div>
-            <div class="info-panel">
-                <table class="info-table">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Earthquake Details</th>
-                        </tr>
-                    </thead>
-                    <tbody id="info-table-body">
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </body>
-    <script src="/resources/js/api.js"></script>
-    <script src="/resources/js/info.js"></script>
-    <script src="/resources/js/utils.js"></script>
-    <script src="/resources/js/map.js"></script>
+  <head>
+    <title>Earthquake Map</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Earthquake Map" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Jan Dean Pasajol" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/resources/images/favicon.ico" />
+    <link rel="stylesheet" href="/resources/css/style.css" />
+    <!-- Icon Font Awsome -->
+    <script
+      src="https://kit.fontawesome.com/1ad2aeb766.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS framework for easy dom manipulation and more -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- The callback parameter is required, so we use console.debug as a noop  -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfsh5zySCzPCYVcKb9xTey44AQBGwtc4o&callback=console.debug"></script>
+  </head>
+
+  <body>
+    <div class="map-container">
+      <div id="map"></div>
+      <div class="info-panel">
+        <!-- Earthquake Info Table -->
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th colspan="2" class="info-table-header">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Earthquake Details</span>
+                <i
+                  id="info-table-close"
+                  class="fa fa-times fa-lg close"
+                  aria-hidden="true"
+                ></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="info-table-body"></tbody>
+        </table>
+        <!-- External Links Table -->
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th colspan="2" class="info-table-header">
+                <i class="fa-solid fa-globe"></i>
+                <span>External Links - United States Geological Survey</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="external-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Splash Screen -->
+    <div class="splash">
+      <div class="splash-content">
+        <img src="/resources/images/jd-logo.png" alt="JD logo" />
+        <p class="title">Earthquake Map</p>
+        <p class="subtitle">Powered by United States Geological Survey</p>
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+    </div>
+  </body>
+  <script src="/resources/js/api.js"></script>
+  <script src="/resources/js/info.js"></script>
+  <script src="/resources/js/utils.js"></script>
+  <script src="/resources/js/map.js"></script>
 </html>
