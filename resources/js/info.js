@@ -79,7 +79,7 @@ async function populateSidePanel(detail) {
       "USGS-data": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}`,
       origin: `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/origin/detail`,
       "phase-data": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/origin/phase`,
-      "do-you-feel-it": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/dyfi/intensity`,
+      "did-you-feel-it": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/dyfi/intensity`,
       "nearby-cities": `https://earthquake.usgs.gov/earthquakes/eventpage/${code}/region-info`,
     };
 
