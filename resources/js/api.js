@@ -8,6 +8,7 @@ async function getEarthquakesFeed() {
 }
 //GET - earthquake details
 async function getEarthquakesDetail(url) {
+  // https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/${id}.geojson
   const response = await $.ajax({
     url: url,
     type: "GET",

@@ -14,6 +14,7 @@ async function initMap() {
 
   //   Initial map viewport
   const myLatLng = { lat: 11, lng: 120 };
+
   // Restriction prevent panning to gray area
   const map = new google.maps.Map($("#map")[0], {
     zoom: 3,

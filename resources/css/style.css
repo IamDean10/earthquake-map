@@ -131,7 +131,7 @@ body {
 .splash-content {
   height: 90%;
   color: white;
-  font-size: 30px;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,5 +157,4 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }

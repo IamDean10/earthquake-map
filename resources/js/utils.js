@@ -15,6 +15,7 @@ function epochToDate(epoch) {
   return date;
 }
 
+// Convert kebab to title case
 function kebabToTitle(string) {
   return string.replace(/^-*(.)|-+(.)/g, (s, c, d) =>
     c ? c.toUpperCase() : " " + d.toUpperCase()
