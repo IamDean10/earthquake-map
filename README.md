@@ -78,7 +78,13 @@ Start the server
 
 ![App Screenshot](https://drive.google.com/uc?id=10WAAOcYUlvYn5su7EM0U5sOYFEnEIJ7S)
 
+
+## Reference
+
+ - [USGS Earthquake Hazard Program](https://earthquake.usgs.gov/earthquakes/feed/v1.0/)
+
+
 ## Authors
 
-- [@iamDean10](https://github.com/IamDean10)
+- [@iamDean10 - Jan Dean Pasajol](https://github.com/IamDean10)
 
