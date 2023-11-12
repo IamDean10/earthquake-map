@@ -1,14 +1,14 @@
 async function populateSidePanel(detail) {
   // Hide table and show loader
-  $('.info-loader ').show();
-  $('.info-table ').hide();
+  $(".info-loader ").show();
+  $(".info-table ").hide();
 
   // GET earthquake details
-  let earthquakeDetails = await getEarthquakesDetail(detail);
+  let earthquakeDetails = await API.getEarthquakesDetail(detail);
 
   // Hide loader and show table
-  $('.info-loader ').hide();
-  $('.info-table ').show();
+  $(".info-loader ").hide();
+  $(".info-table ").show();
 
   //  Destructure Object
   const {
@@ -45,7 +45,7 @@ async function populateSidePanel(detail) {
 
     const earthquakeData = {
       place,
-      time: epochToDate(time),
+      time: Utils.epochToDate(time),
       magnitude: mag + " " + magType,
       depth: depth + " " + "km",
       "Number of Stations": numStationsUsed,
@@ -60,7 +60,7 @@ async function populateSidePanel(detail) {
     //  Loop to create new table data
     for (const key in earthquakeData) {
       result +=
-        `<tr><td width='150px'>${kebabToTitle(key)} </td>` +
+        `<tr><td width='150px'>${Utils.kebabToTitle(key)} </td>` +
         `<td> ${earthquakeData[key] ?? "-"} </td></tr>`;
     }
 
@@ -85,8 +85,8 @@ async function populateSidePanel(detail) {
 
     for (const key in externalLinks) {
       result +=
-        `<tr><td width='150px'>${kebabToTitle(key)} </td>` +
-        `<td> <a  class="external-link" onclick="confirmRedirect('${externalLinks[key]}')" target="_blank"><i class="fa-solid fa-link"></i> Click Here</a> </td></tr>`;
+        `<tr><td width='150px'>${Utils.kebabToTitle(key)} </td>` +
+        `<td> <a  class="external-link" onclick="Utils.confirmRedirect('${externalLinks[key]}')" target="_blank"><i class="fa-solid fa-link"></i> Click Here</a> </td></tr>`;
     }
 
     // Insert html to external table

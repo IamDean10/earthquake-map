@@ -9,7 +9,7 @@ async function initMap() {
   let prevInfoWindow;
 
   // Initialize GET earthquake feeds
-  earthquakeFeed = await getEarthquakesFeed();
+  earthquakeFeed = await API.getEarthquakesFeed();
   const features = earthquakeFeed?.features ?? [];
 
   //   Initial map viewport
@@ -20,7 +20,7 @@ async function initMap() {
     zoom: 3,
     center: myLatLng,
     restriction: {
-      latLngBounds: {north: 85, south: -85, west: -180, east: 180},
+      latLngBounds: { north: 85, south: -85, west: -180, east: 180 },
     },
   });
 
@@ -44,7 +44,7 @@ async function initMap() {
       '<div class="info-content">' +
       `<h2>${title} </h2>` +
       "<div>" +
-      `${epochToDate(time)}` +
+      `${Utils.epochToDate(time)}` +
       "</div>" +
       '<div class="info-footer">' +
       `Click to view full details` +
